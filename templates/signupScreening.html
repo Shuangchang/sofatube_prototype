@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Screening Signup</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!--stepper-->
+    <script src="../stepper/stepper.js"></script>
+    <link rel="stylesheet" href="../stepper/stepper.css">
+    <!--getmdl-select-->
+    <script src="../getmdl-select.min.js"></script>
+    <link rel="stylesheet" href="../getmdl-select.min.css">
+    <!--sofatube-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="../js/signupScreening.js"></script>
+    <link rel="stylesheet" href="../css/signupScreening.css">
+
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, .02);
+        }
+
+        .mdl-stepper-demo .mdl-stepper {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+<!-- style -->
+<style>
+    .mdl-stepper > .mdl-step > .mdl-step__content {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<section class="mdl-stepper-demo">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <!-- markup -->
+            <ul class="mdl-stepper mdl-stepper--feedback mdl-stepper--horizontal" id="demo-stepper-horizontal-linear-feedback">
+                <li class="mdl-step" data-step-transient-message="Step 1 looks great! Step 2 is coming up.">
+                    <span class="mdl-step__label">
+                        <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Project Information</span>
+                        </span>
+                    </span>
+                    <div class="mdl-step__content step2">
+                        <div class="mdl-grid upload-project-max-width upload-project">
+                            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                                <div class="mdl-card__supporting-text">
+                                    <form action="#">
+                                        <div class="mdl-card__title">
+                                            <h2 class="mdl-card__title-text">Project Information</h2>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="projectTitle">
+                                            <label class="mdl-textfield__label" for="projectTitle">Project Title</label>
+                                            <span class="mdl-textfield__error">Letters and spaces only</span>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="logLine">
+                                            <label class="mdl-textfield__label" for="logLine">Log Line</label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <textarea class="mdl-textfield__input" type="text" rows="5" id="extendedDescription"></textarea>
+                                            <label class="mdl-textfield__label" for="extendedDescription">Extended Description (optional)</label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="Genre" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="Genre">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="Genre" class="mdl-textfield__label">Genre</label>
+                                            <ul for="Genre" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">Fiction</li>
+                                                <li class="mdl-menu__item">Non-Fiction</li>
+                                                <li class="mdl-menu__item">Experimental</li>
+                                                <li class="mdl-menu__item">Documentary</li>
+                                                <li class="mdl-menu__item">3D Animation</li>
+                                                <li class="mdl-menu__item">2D Animation</li>
+                                                <li class="mdl-menu__item">Stop Motion</li>
+                                                <li class="mdl-menu__item">Craft Track</li>
+                                            </ul>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="tags">
+                                            <label class="mdl-textfield__label" for="tags">Tags</label>
+                                            <span class="mdl-textfield__error">Use , to separate tags</span>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="duration">
+                                            <label class="mdl-textfield__label" for="duration">Duration</label>
+                                        </div>
+
+                                        <div id="addCreditDiv">
+                                            <h5>Credits</h5>
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input" type="text" id="name">
+                                                <label class="mdl-textfield__label" for="name">Name</label>
+                                            </div>
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                                <input class="mdl-textfield__input" type="text" id="Responsibility" value="--non-selected--" readonly tabIndex="-1">
+                                                <label for="Responsibility">
+                                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                                </label>
+                                                <label for="Responsibility" class="mdl-textfield__label">Responsibility</label>
+                                                <ul for="Responsibility" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                    <li class="mdl-menu__item">--non-selected--</li>
+                                                    <li class="mdl-menu__item">Screen Writer</li>
+                                                    <li class="mdl-menu__item">Director of Photography</li>
+                                                    <li class="mdl-menu__item">Digital Imaging Technician</li>
+                                                    <li class="mdl-menu__item">Producer</li>
+                                                    <li class="mdl-menu__item">Editor</li>
+                                                    <li class="mdl-menu__item">Sound Designer</li>
+                                                    <li class="mdl-menu__item">Sound Mixer</li>
+                                                    <li class="mdl-menu__item">Visual Effects</li>
+                                                    <li class="mdl-menu__item">Color correction</li>
+                                                    <li class="mdl-menu__item">Production Designer</li>
+                                                    <li class="mdl-menu__item">Animator</li>
+                                                    <li class="mdl-menu__item">Light Artist/TD</li>
+                                                    <li class="mdl-menu__item">Rigging TD</li>
+                                                    <li class="mdl-menu__item">Modeling Artist</li>
+                                                    <li class="mdl-menu__item">Texture Artist</li>
+                                                    <li class="mdl-menu__item">Matte Painter/Background Artist</li>
+                                                    <li class="mdl-menu__item">Other</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="project-information-button mdl-cell mdl-cell--3-col">
+                                            <button id="addCredit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                <i class="material-icons" role="presentation">add</i> &nbsp; add more
+                                            </button>
+                                            <div class="mdl-tooltip mdl-tooltip--large" for="addCredit">
+                                                <strong>Add more credit</strong>
+                                            </div>
+                                        </div>
+
+                                        <!--<div>-->
+                                            <h5>Ratings</h5>
+                                            <!--<button id="show-info" class="mdl-button mdl-js-button dialog-button">Rating help</button>-->
+                                        <!--</div>-->
+                                        <div class="project-information-checkbox mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Explicit">
+                                                <input type="checkbox" id="Explicit" class="mdl-checkbox__input" checked>
+                                                <span class="mdl-checkbox__label">If this video includes explicit content?</span>
+                                                <div class="project-information-checkbox-text">Select yes if your film contains explicit/inappropriate material for viewing audiences under 13. </div>
+                                            </label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <input class="mdl-textfield__input" type="text" id="suggestiveContent">
+                                            <label class="mdl-textfield__label" for="suggestiveContent">Suggestive Content</label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="MPAARating" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="MPAARating">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="MPAARating" class="mdl-textfield__label">Approximate MPAA Rating</label>
+                                            <ul for="MPAARating" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">G</li>
+                                                <li class="mdl-menu__item">PG</li>
+                                                <li class="mdl-menu__item">PG-13</li>
+                                                <li class="mdl-menu__item">R</li>
+                                                <li class="mdl-menu__item">NC-17</li>
+                                            </ul>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="TVRating" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="TVRating">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="TVRating" class="mdl-textfield__label">TV Rating</label>
+                                            <ul for="TVRating" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">D</li>
+                                                <li class="mdl-menu__item">L</li>
+                                                <li class="mdl-menu__item">S</li>
+                                                <li class="mdl-menu__item">V</li>
+                                                <li class="mdl-menu__item">N/A</li>
+                                            </ul>
+                                        </div>
+                                        <div id="addCollaboratorsDiv">
+                                            <h5>Academic Information</h5>
+
+                                            <div class="project-information-checkbox mdl-cell mdl-cell--12-col">
+                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="classReel">
+                                                    <input type="checkbox" id="classReel" class="mdl-checkbox__input" checked>
+                                                    <span class="mdl-checkbox__label">This is for compilation class reels, not individual projects. </span>
+                                                </label>
+                                            </div>
+                                            <div class="project-information-checkbox mdl-cell mdl-cell--12-col">
+                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="collaboration">
+                                                    <input type="checkbox" id="collaboration" class="mdl-checkbox__input" checked>
+                                                    <span class="mdl-checkbox__label">This is for students that are submitting to screenings as a group.</span>
+                                                    <div class="project-information-checkbox-text">It is NOT for listing any cast, crew, or other. </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="project-information-button mdl-cell mdl-cell--4-col">
+                                            <button id="addCollaborators" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                <i class="material-icons" role="presentation">add</i> &nbsp; add collaborators
+                                            </button>
+                                            <div class="mdl-tooltip mdl-tooltip--large" for="addCollaborators">
+                                                <strong>Add more collaborators</strong>
+                                            </div>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="course" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="course">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="course" class="mdl-textfield__label">Course Name</label>
+                                            <ul for="course" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">A</li>
+                                                <li class="mdl-menu__item">B</li>
+                                                <li class="mdl-menu__item">C</li>
+                                            </ul>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="instructor" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="instructor">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="instructor" class="mdl-textfield__label">Instructor</label>
+                                            <ul for="instructor" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">A</li>
+                                                <li class="mdl-menu__item">B</li>
+                                                <li class="mdl-menu__item">C</li>
+                                            </ul>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="medium" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="medium">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="medium" class="mdl-textfield__label">Medium</label>
+                                            <ul for="medium" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">Digital</li>
+                                                <li class="mdl-menu__item">Script</li>
+                                                <li class="mdl-menu__item">Craft-Track Presentation</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5>Release Permission</h5>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" type="text" id="permissionLevel" value="--non-selected--" readonly tabIndex="-1">
+                                            <label for="permissionLevel">
+                                                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                            </label>
+                                            <label for="permissionLevel" class="mdl-textfield__label">Permission Level</label>
+                                            <ul for="permissionLevel" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">--non-selected--</li>
+                                                <li class="mdl-menu__item">World Viewable</li>
+                                                <li class="mdl-menu__item">RIT Only</li>
+                                                <li class="mdl-menu__item">Not Viewable</li>
+                                            </ul>
+                                        </div>
+                                        <div class="project-information-checkbox mdl-cell mdl-cell--12-col">
+                                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enableComment">
+                                                <input type="checkbox" id="enableComment" class="mdl-switch__input" checked>
+                                                <span class="mdl-switch__label">Enable/Disable Comments</span>
+                                            </label>
+                                        </div>
+                                        <div class="project-information-checkbox mdl-cell mdl-cell--12-col">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="acknowledge">
+                                                <input type="checkbox" id="acknowledge" class="mdl-checkbox__input" checked>
+                                                <span class="mdl-checkbox__label">I acknowledge the right of RIT for the use of my work by faculty for educational and promotional purposes. </span>
+                                            </label>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <h5>Digital Signature</h5>
+                                        <div class="project-information-checkbox mdl-cell mdl-cell--12-col">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="digitalSigniture">
+                                                <input type="checkbox" id="digitalSigniture" class="mdl-checkbox__input" checked>
+                                                <span class="mdl-checkbox__label">I, <i>Shuang Chang</i>, am aware of all rights and allowances associated with my material and the above releases and hereby release my work for uses as indicated.</span>
+                                            </label>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <textarea class="mdl-textfield__input" type="text" rows="5" id="screening-instruction"></textarea>
+                                            <label class="mdl-textfield__label" for="screening-instruction">Special screening instructions</label>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input autocomplete="off" class="mdl-textfield__input" type="text" id="stepper-transient-message">
+                                <label class="mdl-textfield__label" for="stepper-transient-message">Transient message for current step</label>
+                                <span class="mdl-textfield__error">Invalid input</span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mdl-step__actions">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+                            Continue
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+                            Cancel
+                        </button>
+                        <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+                            Back
+                        </button>
+                    </div>
+                </li>
+                <li class="mdl-step" data-step-transient-message="Step 2 looks great! Step 3 is coming up.">
+                    <span class="mdl-step__label">
+                      <span class="mdl-step__title">
+                        <span class="mdl-step__title-text">Upload project</span>
+                      </span>
+                    </span>
+                    <div class="mdl-step__content step1">
+                        <div class="mdl-grid upload-project-max-width upload-project">
+                            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                                <div class="mdl-card__supporting-text">
+                                    <form action="#" class="">
+                                        <div class="mdl-card__title">
+                                            <h2 class="mdl-card__title-text">Upload project</h2>
+                                        </div>
+                                        <div class="upload-button mdl-cell mdl-cell--3-col">
+                                            <button id="uploadvideo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                <i class="material-icons" role="presentation">file_upload</i> &nbsp; upload video
+                                            </button>
+                                            <div class="mdl-tooltip mdl-tooltip--large" for="uploadvideo">
+                                                <strong>Choose file to upload</strong>
+                                            </div>
+                                        </div>
+                                        <div class="upload-button mdl-cell mdl-cell--4-col">
+                                            <button id="selectvideo" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                or select from my archive
+                                            </button>
+                                        </div>
+                                        <p>
+                                            By agreeing below, you are acknowledging and adhering to the policies set forth by the RIT School of
+                                            Film and Animation that your work does not contain any form of copyrighted material.
+                                            The use of copyrighted material in your project prevents it from being shown at screenings.
+                                            Additionally, the project will no longer be eligible to be included in the archive, honors show,
+                                            sofaTube, and any promotional presentation. This policy does not pertain to the materials presented
+                                            on class reels or craft track presentations, and these projects may use copyrighted materials.
+                                        </p>
+                                        <div class="upload-checkbox mdl-cell mdl-cell--2-col">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                                                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+                                                <span class="mdl-checkbox__label">I agree</span>
+                                            </label>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-step__actions">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+                            Continue
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+                            Cancel
+                        </button>
+                        <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+                            Back
+                        </button>
+                    </div>
+                </li>
+
+
+                <li class="mdl-step" data-step-transient-message="Step 3 looks great! Step 4 is coming up.">
+                    <span class="mdl-step__label">
+                        <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Verify Information</span>
+                        </span>
+                    </span>
+                    <div class="mdl-step__content step3">
+                        <div class="mdl-grid upload-project-max-width upload-project">
+                            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                                <div class="mdl-card__supporting-text">
+                                    <form action="#" class="">
+                                        <div class="mdl-card__title">
+                                            <h2 class="mdl-card__title-text">Verify Information</h2>
+                                        </div>
+                                        <p class="warning-paragraph"><b>Warning: </b>Once you click 'Continue' and proceed from this step you file will be moved and enter the sofaTube system.
+                                            You will NOT be able to edit your screenings sign up information.
+                                            Please check all information to ensure accuracy.
+                                        </p>
+                                        <div class="upload-button mdl-cell mdl-cell--3-col">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label change-file">
+                                                <input class="mdl-textfield__input" type="text" id="">
+                                                <label class="mdl-textfield__label" for="">v123.mov</label>
+                                            </div>
+                                            <button id="changeFile" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                <i class="material-icons" role="presentation">edit</i> &nbsp; Change file
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <h5>Contact Information</h5>
+                                            <ul class="project-information">
+                                                <li>
+                                                    Name
+                                                </li>
+                                                <li>
+                                                    Email
+                                                </li>
+                                                <li>
+                                                    Program
+                                                </li>
+                                                <li>
+                                                    Year
+                                                </li>
+                                                <li>
+                                                    Phone
+                                                </li>
+                                                <li>
+                                                    Alternate Name
+                                                </li>
+                                                <li>
+                                                    Alternate Email
+                                                </li>
+                                                <li>
+                                                    Alternate Phone
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <div>
+                                            <h5>Copyright Material</h5>
+                                            <p class="project-information">Has acknowledged the policies set forth by the RIT School of Film and Animation regarding Copyright Material.</p>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <div>
+                                            <h5>Project Information</h5>
+                                            <ul class="project-information">
+                                                <li>
+                                                    Title
+                                                </li>
+                                                <li>
+                                                    Log Line
+                                                </li>
+                                                <li>
+                                                    Description
+                                                </li>
+                                                <li>
+                                                    Genre
+                                                </li>
+                                                <li>
+                                                    Duration
+                                                </li>
+                                                <li>
+                                                    Tags
+                                                </li>
+                                                <li>
+                                                    Credits
+                                                </li>
+                                                <li>
+                                                    Permission Level
+                                                </li>
+                                                <li>
+                                                    Explicit
+                                                </li>
+                                                <li>
+                                                    Suggestive Material
+                                                </li>
+                                                <li>
+                                                    Approximate MPAA Rating
+                                                </li>
+                                                <li>
+                                                    TV Rating
+                                                </li>
+                                                <li>
+                                                    Class Reel
+                                                </li>
+                                                <li>
+                                                    Collaboration
+                                                </li>
+                                                <li>
+                                                    Collaborators
+                                                </li>
+                                                <li>
+                                                    Course
+                                                </li>
+                                                <li>
+                                                    Instructor
+                                                </li>
+                                                <li>
+                                                    Medium
+                                                </li>
+                                                <li>
+                                                    Special Screening Instructions
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="demo-separator mdl-cell mdl-cell--12-col"></div>
+                                        <div class="border-separator mdl-cell mdl-cell--12-col"></div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <h6>By clicking verify you hereby agree to the following:</h6>
+                                        <p class="indent-paragraph">All of the above information is accurate and complete to the best of my ability.
+                                            <br>I am the original creator of the work that has been submitted.
+                                            <br>I have read and agree to the <a class=mdl-navigation__link" target="_blank" href="https://inside.cias.rit.edu/sofa/policy/">SOFA Official Screening Policy.</a>
+                                            <br>The file I have supplied is the work to be screened at a time to be assigned at the end-of-semester screenings.</p>
+                                        <div class="upload-checkbox mdl-cell mdl-cell--2-col">
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="screening-agreement">
+                                                <input type="checkbox" id="screening-agreement" class="mdl-checkbox__input" checked>
+                                                <span class="mdl-checkbox__label">I agree</span>
+                                            </label>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-step__actions">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+                            Continue
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+                            Cancel
+                        </button>
+                        <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+                            Back
+                        </button>
+                    </div>
+                </li>
+                <li class="mdl-step" data-step-transient-message="Step 4 looks great! Thanks.">
+                    <span class="mdl-step__label">
+                        <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">FVASA Signup </span>
+                        </span>
+                    </span>
+                    <div class="mdl-step__content step4">
+                        <div class="mdl-grid upload-project-max-width upload-project">
+                            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                                <div class="mdl-card__supporting-text">
+                                    <form action="#" class="">
+                                        <div class="mdl-card__title">
+                                            <h2 class="mdl-card__title-text">FVASA Signup</h2>
+                                        </div>
+                                        <p>Please make sure you have a copy of your receipt with you when come to sign up for a screening time.</p>
+                                        <p class="warning-paragraph">If this is a thesis project, please contact FVASA at rit.fvasa@gmail.com or come to our office in 7B - A068 during our office hours to schedule a time.
+                                            Everyone else can come to our screenings registration day, Friday Week 10 from 9am - 5pm outside the FVASA office by the cage.
+                                        </p>
+                                        <ul class="project-information">
+                                            <li>Project title</li>
+                                            <li>Name</li>
+                                            <li>Date submitted</li>
+                                            <li>Screening ID</li>
+                                        </ul>
+                                        <div class="border-separator mdl-cell--12-col"></div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                        <div class="upload-button mdl-cell mdl-cell--4-col">
+                                            <button id="fvasa-signup" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                                                View and Print Receipt
+                                            </button>
+                                            <div class="mdl-tooltip mdl-tooltip--large" for="fvasa-signup">
+                                                <strong>View and Print Receipt</strong>
+                                            </div>
+                                        </div>
+                                        <div class="demo-separator mdl-cell--1-col"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-step__actions">
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+                            Complete
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+                            Cancel
+                        </button>
+                        <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+                            Back
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<!-- script -->
+<script>
+    (function () {
+        var stepperHorizontal = function () {
+            var selector = '.mdl-stepper#demo-stepper-horizontal-linear-feedback';
+            // Select stepper container element
+            var stepperElement = document.querySelector(selector);
+            var Stepper;
+            var steps;
+            var inputTransientMessage /** @type {HTMLElement} */;
+
+            if (!stepperElement) return;
+
+            // Get the MaterialStepper instance of element to control it.
+            Stepper = stepperElement.MaterialStepper;
+
+            if (!Stepper) {
+                console.error('MaterialStepper instance is not available for selector: ' + selector + '.');
+                return;
+            }
+            steps = stepperElement.querySelectorAll('.mdl-step');
+
+            for (var i = 0; i < steps.length; i++) {
+
+                // When user clicks on [data-stepper-next] button of step.
+                steps[i].addEventListener('onstepnext', (function (e, step) {
+                    return function () {
+                        // {element}.MaterialStepper.next() change the state of current step to "completed"
+                        // and move one step forward.
+                        inputTransientMessage = step.querySelector('#stepper-transient-message');
+
+                        if (inputTransientMessage && inputTransientMessage.value.length) {
+                            step.setAttribute('data-step-transient-message', inputTransientMessage.value);
+                        }
+                        setTimeout(function () {
+                            Stepper.next();
+                        }, 3000);
+                    };
+                })(event, steps[i]));
+            }
+            // When all steps are completed this event is dispatched.
+            stepperElement.addEventListener('onsteppercomplete', function (e) {
+                var toast = document.querySelector('#snackbar-stepper-complete');
+                if (!toast) return;
+                toast.MaterialSnackbar.showSnackbar({
+                    message: 'Stepper horizontal + feedback are completed',
+                    timeout: 4000,
+                    actionText: 'Ok'
+                });
+            });
+        };
+
+        window.addEventListener('load', stepperHorizontal)
+    })();
+</script>
+</body>
+
+</html>

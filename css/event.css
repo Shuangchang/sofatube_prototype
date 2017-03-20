@@ -1,0 +1,62 @@
+.sofatube-event-background {
+    background-image: url("../images/eventbackground.png");
+    background-size: cover;
+    background-position: top;
+    font-family: 'Raleway','Roboto', sans-serif;
+}
+.text-background {
+    background-color: rgba(0,0,0,0.5);
+    padding-left: 80px;
+    width: 744px;
+}
+.event-slogan {
+    font-size: 64px;
+    line-height: 150%;
+    padding-top: 160px;
+    color:  #ffb84d;
+    font-weight:500;
+    letter-spacing: 4px;
+}
+.event-description {
+    display: block;
+    font-size: 16px;
+    line-height: 200%;
+    padding-top: 48px;
+    letter-spacing: 2px;
+}
+.event-description-text {
+    margin: 0;
+    padding-right: 8px;
+}
+.schedule-button{
+    margin-top: 3em;
+    margin-bottom: 28em;
+    background-color: rgba(255,255,255,.13);
+}
+@media only screen and (max-width: 768px){
+
+    .text-background {
+        padding-left: 32px;
+    }
+    .event-slogan {
+        padding-top: 32px;
+        letter-spacing: 2px;
+        font-size: 48px;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .event-description {
+    }
+    .event-slogan {
+        padding-top: 24px;
+        letter-spacing: 2px;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .text-background {
+        width: 100%;
+        padding-left: 16px;
+    }
+}

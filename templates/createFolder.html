@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Upload Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-light_blue.min.css">
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!--getmdl-select-->
+    <script src="../getmdl-select.min.js"></script>
+    <link rel="stylesheet" href="../getmdl-select.min.css">
+    <!--sofatube-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="mdl-grid upload-project-max-width upload-project">
+        <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+
+            <div class="mdl-card__supporting-text">
+                <form action="#">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Create Folder</h2>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                        <input class="mdl-textfield__input" type="text" id="project-title">
+                        <label class="mdl-textfield__label" for="project-title">Project Title...</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select mdl-cell mdl-cell--12-col">
+                        <input class="mdl-textfield__input" type="text" id="medium-type" value="--non-selected--" readonly tabIndex="-1">
+                        <label for="medium-type">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="medium-type" class="mdl-textfield__label">Medium Type</label>
+                        <ul for="medium-type" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">--non-selected--</li>
+                            <li class="mdl-menu__item">Paper</li>
+                            <li class="mdl-menu__item">Craft Track</li>
+                            <li class="mdl-menu__item">Other</li>
+                        </ul>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select mdl-cell mdl-cell--12-col">
+                        <input class="mdl-textfield__input" type="text" id="related-video" value="--non-selected--" readonly tabIndex="-1">
+                        <label for="related-video">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                        </label>
+                        <label for="related-video" class="mdl-textfield__label">Related Video</label>
+                        <ul for="related-video" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">--non-selected--</li>
+                            <li class="mdl-menu__item">Video Title 1</li>
+                            <li class="mdl-menu__item">Video Title 2</li>
+                        </ul>
+                    </div>
+                    <div class="upload-button mdl-cell mdl-cell--3-col">
+                        <button id="add-file" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+                            <i class="material-icons" role="presentation">file_upload</i> &nbsp; add file
+                        </button>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="add-file">
+                            <strong>Choose file to upload</strong>
+                        </div>
+                    </div>
+
+                    <div class="demo-separator mdl-cell mdl-cell--12-col"></div>
+                    <div class="border-separator mdl-cell mdl-cell--12-col"></div>
+                    <h6>By clicking verify you hereby agree to the following:</h6>
+                    <p class="indent-paragraph">All of the above information is accurate and complete to the best of my ability.<br>I am the original creator of the work that has been submitted.</p>
+                    <div class="upload-checkbox mdl-cell mdl-cell--2-col">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-7">
+                    <input type="checkbox" id="checkbox-7" class="mdl-checkbox__input" checked>
+                    <span class="mdl-checkbox__label">I agree</span>
+                    </label>
+                    </div>
+                    <div class="demo-separator mdl-cell--1-col"></div>
+                </form>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect cancel">
+                    Cancel
+                </button>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored complete">
+                    Complete
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

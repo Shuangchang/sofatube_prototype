@@ -1,0 +1,137 @@
+<div ui-view></div>
+<div id="student-project">
+    <div class="section--center">
+        <div class="feature-project mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-controller="advancedSearchCtrl">
+            <div class="mdl-layout-title mdl-typography--text-uppercase mdl-typography--text-center">student projects</div>
+
+            <form action="#" class="mdl-typography--text-center">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="search-project">
+                    <label class="mdl-textfield__label" for="search-project">search</label>
+                </div>
+                <span class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" for="search-project">
+                    <i class="material-icons">search</i>
+                </span>
+                <span class="sofatube-more-button mdl-typography--text-center">
+                <a class="mdl-typography--text-uppercase mdl-color-text--grey-700" ui-sref="searchResult">explore all student projects</a>
+                </span>
+            </form>
+
+
+            <div class="demo-separator mdl-cell--1-col"></div>
+
+            <!--<div>-->
+                <!--<ul class="mdl-cell mdl-cell&#45;&#45;12-col searchby">-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">All</span></li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Genre</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col" ng-click="showAnimation = !showAnimation">Animation</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Live Action</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Research</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Other </span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Year</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">2016</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">2015</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">2014</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">before</span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Special Collection</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Honors Show</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Women of SOFA</span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type"-->
+                                                                    <!--ng-click="showAdvancedSearch = !showAdvancedSearch">Advanced Search</span></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div ng-show="showAdvancedSearch">-->
+                <!--<ul class="mdl-cell mdl-cell&#45;&#45;12-col searchby">-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Genre</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Fiction</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Non Fiction</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Experimental</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Documentary</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">3D Animation</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">2D Animation</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Stop Motion </span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Medium</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Digital</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Script</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Craft Track</span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <!--<li class="mdl-grid mdl-grid&#45;&#45;no-spacing"><span class="mdl-cell mdl-cell&#45;&#45;3-col mdl-cell&#45;&#45;3-col-desktop mdl-cell&#45;&#45;2-col-tablet mdl-cell&#45;&#45;4-col-phone searchby-type">Type</span>-->
+                        <!--<span class="mdl-cell mdl-cell&#45;&#45;9-col mdl-cell&#45;&#45;9-col-desktop mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;4-col-phone">-->
+                            <!--<span class="mdl-grid mdl-grid&#45;&#45;no-spacing">-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">BFA Thesis</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">MFA Thesis</span>-->
+                                <!--<span class="mdl-cell mdl-cell&#45;&#45;2-col">Class Reel</span>-->
+                            <!--</span>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<div class="demo-separator mdl-cell&#45;&#45;1-col"></div>-->
+            <!--</div>-->
+            <!--<button class="mdl-button search-option mdl-color&#45;&#45;grey-200" ng-show="showAnimation">-->
+                <!--<span class="mdl-color-text&#45;&#45;grey-700 mdl-cell&#45;&#45;middle" >Animation <i class="material-icons" ng-click="showAnimation = !showAnimation">cancel</i></span>-->
+            <!--</button>-->
+
+            <div class="border-separator mdl-cell--12-col"></div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div ng-controller="videoDataCtrl" class="explore-feature-project">
+                <span class="explore-feature-project-title mdl-color-text--grey-700"> Honors Show 2015</span>
+                <ul class="mdl-grid mdl-grid--no-spacing">
+                    <li class="mdl-cell mdl-cell--2-col" ng-repeat="x in (showedVideo = (VideoData | limitTo:showLimit))">
+                        <div class="demo-cards">
+                            <div class="explore-video-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                <div class="mdl-card__media">
+                                    <img src="../images/videoCover.png" class="video-cover-block"/>
+                                </div>
+                                <div class="mdl-card__supporting-text mdl-color-text--teal-600" ui-sref="singleVideo">
+                                    <div class="mdl-grid mdl-grid--no-spacing">
+                                        <span class="mdl-cell mdl-cell--top mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone avatar-block">
+                                            <img src="../images/user.jpg" class="demo-avatar">
+                                        </span>
+                                        <span class="mdl-cell mdl-cell--8-col mdl-cell--top mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                            <a href="#">{{x.title}}</a><br />
+                                            <h5 class=" mdl-color-text--grey-500">{{x.author}}</h5>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <button class="mdl-button mdl-js-button button-more-scroll-right" ng-click="showLimit = showLimit + 3">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                    </button>
+                    <div class="sofatube-more-button mdl-typography--text-center mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <a class="mdl-typography--text-uppercase mdl-color-text--grey-600" ng-click="showLimit = showLimit + 3">more</a>
+                    </div>
+                </ul>
+                <div class="demo-separator mdl-cell--1-col"></div>
+                <div class="demo-separator mdl-cell--1-col"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--src="https://www.youtube.com/embed/taA84kAuyPw"-->

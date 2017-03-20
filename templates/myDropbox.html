@@ -1,0 +1,139 @@
+<div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col">
+    > my dropbox
+</div>
+<div class="mdl-color-text--grey-700 mdl-base">
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <section class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-controller="userVideoDataCtrl">
+                <div class="mdl-demo">
+                    <h5 class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone profile-text">My Archive</h5>
+                </div>
+                <ul class="mdl-grid mdl-grid--no-spacing">
+                    <li class="dropbox-item" ng-repeat="x in userVideoData">
+                        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp">
+                            <div class="mdl-grid mdl-grid--no-spacing">
+                                <header class="mdl-cell mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone mdl-color--black"  ui-sref="main.oneVideo">
+                                    <img src="../images/videoCover.png" class="video-cover">
+                                </header>
+                                <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--5-col-tablet mdl-cell--4-col-phone">
+                                    <div class="mdl-card__title mdl-color-text--grey-700"  ui-sref="main.oneVideo">
+                                        <div class="mdl-card__title-block mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col">
+                                            <div class="mdl-card__title-text mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">{{x.title}}</div>
+                                            <div class="mdl-card__supporting-text">Date created: {{x.dateCreated}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-card__supporting-text file-list">
+                                        <ul class="mdl-list">
+                                            <li class="mdl-list__item-primary-content mdl-grid mdl-grid--no-spacing" ng-repeat="y in x.dropboxFiles">
+                                                <div class="mdl-cell mdl-cell--12-col mdl-cell--12s-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-color-text--grey-500">{{y.title}}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mdl-card__actions mdl-card--border">
+                                        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">Request file change</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <div class="demo-separator mdl-cell mdl-cell--12-col"></div>
+            <section class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-demo">
+                    <h5 class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone profile-text">My Files</h5>
+                </div>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing dropbox-item-file" ng-controller="dropboxProjectsDataCtrl">
+                    <ul class="mdl-list mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <li ng-repeat="x in DropboxProjectsData">
+                            <div class="mdl-list__item mdl-list__item--three-line mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                <span class="mdl-list__item-primary-content mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--4-col-phone" ui-sref="main.dropboxFiles">
+                                    <span class="mdl-grid mdl-grid--no-spacing">
+                                        <span class="mdl-cell mdl-cell--1-col-desktop mdl-cell--1-col-tablet mdl-cell--hide-phone"><i class="mdl-color-text--grey-400 material-icons">folder</i></span>
+                                        <span class="mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--4-col-phone">
+                                            <div class="mdl-list__item-text-title">{{x.title}}</div>
+                                            <div class="mdl-list__item-text-body">
+                                                <p class="mdl-grid mdl-grid--no-spacing">
+                                                    <span class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">Last modified: </span><span>{{x.lastModified}} </span>
+                                                </p>
+                                                <p class="mdl-grid mdl-grid--no-spacing">
+                                                    <span class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">Medium type: </span><span>{{x.meduimType}}</span>
+                                                </p>
+                                                <p class="mdl-grid mdl-grid--no-spacing">
+                                                    <span class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">Related video: </span>
+                                                    <span class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet  mdl-cell--2-col-phone">{{x.relatedVideo.title}}</span>
+                                                </p>
+                                            </div>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mdl-list__item-secondary-action mdl-cell--hide-phone mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-color-text--grey-700 action-buttons">
+                                    <button class="icons mdl-button mdl-button--icon mdl-cell mdl-cell--1-col"><i class="material-icons mdl-color-text--blue-grey-400">file_download</i></button>
+                                    <span>download</span>
+                                    <button class="icons mdl-button mdl-button--icon mdl-cell mdl-cell--1-col"><i class="material-icons mdl-color-text--blue-grey-400">archive</i></button>
+                                    <span>archive</span>
+                                </span>
+                            </div>
+                            <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell--4-col-phone action-buttons mdl-grid mdl-grid--no-spacing">
+                                <div class="mdl-cell--2-col-phone">
+                                    <button class="icons mdl-button mdl-button--icon"><i class="material-icons mdl-color-text--blue-grey-400">file_download</i></button><span>download</span>
+                                </div>
+                                <div class="mdl-cell--2-col-phone">
+                                    <button class="icons mdl-button mdl-button--icon"><i class="material-icons mdl-color-text--blue-grey-400">archive</i></button><span>archive</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing dropbox-item-file" ng-controller="dropboxFilesDataCtrl">
+                    <ul class="mdl-list mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <li ng-repeat="x in DropboxFilesData">
+                            <div class="mdl-list__item mdl-list__item--three-line mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                               <span class="mdl-list__item-primary-content mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                                    <span class="mdl-grid mdl-grid--no-spacing">
+                                        <span class="mdl-cell mdl-cell--1-col-desktop mdl-cell--1-col-tablet mdl-cell--hide-phone"><i class="mdl-color-text--grey-400 material-icons">insert_drive_file</i></span>
+                                        <span class="mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--4-col-phone">
+                                            <div class="mdl-list__item-text-title">{{x.title}}</div>
+                                            <div class="mdl-list__item-text-body">
+                                                <p class="mdl-grid mdl-grid--no-spacing">
+                                                    <span class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">Last modified: </span><span>{{x.lastModified}} </span>
+                                                </p>
+                                                <p class="mdl-grid mdl-grid--no-spacing">
+                                                    <span class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">Size: </span><span>{{x.size}}</span>
+                                                </p>
+                                            </div>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mdl-list__item-secondary-action mdl-cell--hide-phone mdl-cell--3-col mdl-cell--3-col-tablet mdl-color-text--grey-700 action-buttons">
+                                        <button class="icons mdl-button mdl-button--icon mdl-cell mdl-cell--1-col"><i class="material-icons mdl-color-text--blue-grey-400" id="downloadFile">file_download</i></button>
+                                        <span>download</span>
+                                        <button class="icons mdl-button mdl-button--icon mdl-cell mdl-cell--1-col"><i class="material-icons mdl-color-text--blue-grey-400">archive</i></button>
+                                        <span>archive</span>
+                                </span>
+                            </div>
+                            <div class="mdl-cell mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell--4-col-phone action-buttons mdl-grid mdl-grid--no-spacing">
+                                <div class="mdl-cell--2-col-phone">
+                                    <button class="icons mdl-button mdl-button--icon"><i class="material-icons mdl-color-text--blue-grey-400">file_download</i></button><span style="font-weight: 300">download</span>
+                                </div>
+                                <div class="mdl-cell--2-col-phone">
+                                    <button class="icons mdl-button mdl-button--icon"><i class="material-icons mdl-color-text--blue-grey-400">archive</i></button><span style="font-weight: 300">archive</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div>
+                <!-- Colored FAB button with ripple -->
+                <button target="_blank" id="create-project" class="fab mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white"><i class="material-icons">add</i></button>
+                <ul class="dropbox-menu mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+                    data-mdl-for="create-project">
+                    <li class="mdl-menu__item"><a href="createFolder.html" target="_blank">Create folder</a></li>
+                    <li class="mdl-menu__item"><a href="uploadFile.html" target="_blank">Upload file</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>

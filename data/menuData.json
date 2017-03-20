@@ -1,0 +1,15 @@
+[
+  {"menuTitle":"All",
+    "submenu":[]
+  },
+  {"menuTitle":"Special Collection",
+    "submenu":["Honors Show 2016","Women of SOFA"]
+  },
+  {
+    "menuTitle":"Genre",
+    "submenu":["Animation","Live Action","Research","Other"]
+  },
+  {"menuTitle":"Year",
+    "submenu":["2016","2015","2014","Earlier"]
+  }
+]

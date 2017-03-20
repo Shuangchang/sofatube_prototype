@@ -1,0 +1,34 @@
+[{
+  "projectId":1,
+  "title":"SOFA Screenings Reel (2013 - 2014)",
+  "author": "Alexander Montoya-Melendrez",
+  "authorAvatar":"images/user",
+  "videoLink": "taA84kAuyPw",
+  "dateCreated":"5/14/2014",
+  "status":"completed",
+  "dropboxFiles":[{ "fileId":1,
+    "title":"SOFA Screenings Reel (2013 - 2014) Report.txt",
+    "lastModified":"5/14/2014",
+    "size": "25kb"
+  },
+  { "fileId":2,
+    "title":"SOFA Screenings Reel (2014 - 2015) Report.txt",
+    "lastModified":"5/14/2015",
+    "size": "23kb"
+  },
+  { "fileId":3,
+    "title":"SOFA Screenings Reel (2015 - 2016) Report.txt",
+    "lastModified":"5/14/2016",
+    "size": "24kb"
+  }]
+},
+  {
+    "projectId":2,
+    "title":"SOFA Screenings Reel (2014 - 2015)",
+    "author": "FVASA",
+    "authorAvatar":"images/user",
+    "videoLink": "taA84kAuyPw",
+    "dateCreated":"5/14/2015",
+    "status":"in progress"
+  }
+]

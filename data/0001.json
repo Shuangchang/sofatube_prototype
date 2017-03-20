@@ -1,0 +1,34 @@
+{
+  "type":"video",
+  "projectId":"0001",
+  "title":"SOFA Screenings Reel (2013 - 2014)",
+  "author":"FVASA",
+  "selfLink:":"",
+  "videoLink":"https://youtu.be/taA84kAuyPw",
+  "thumbnailLink":"images/videoCover.png",
+  "logline":"A one sentence description of the film.",
+  "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida venenatis accumsan. In mi massa, tempus",
+  "genre":"3D animation",
+  "duration":"5:19",
+  "tags":["tag1","tag2","tag2"],
+  "credits":[{
+      "name":"Alexander Montoya-Melendrez",
+      "responsibility":"matte painter / background artist"
+    }],
+  "permissionLevel":"World Viewable",
+  "approximateMPAARating":"PG-13",
+  "TVRating":"MA",
+  "explicit":"Yes",
+  "suggestiveMaterial":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida venenatis accumsan.",
+  "classReel":"yes",
+  "collaboration":"yes",
+  "collaborators":[{
+    "name":"person1"
+  }],
+  "course":"Animation Writing and Visual Storytelling",
+  "instructor":"Mark Anthony Foggetii",
+  "medium":"Craft-Tracker",
+  "specialScreeningInstructions":"In in culpa nulla elit esse. Ex cillum enim aliquip sit sit ullamco ex eiusmod fugiat. Cupidatat ad minim officia mollit laborum magna dolor tempor cupidatat mollit. Est velit sit ad aliqua ullamco laborum excepteur dolore proident incididunt in labore elit.",
+  "dateCreated":"5/14/2014",
+  "dateLastModified":"5/14/2014"
+}

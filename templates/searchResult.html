@@ -1,0 +1,210 @@
+<div class="feature-project" id="student-project">
+    <div class="mdl-layout-title mdl-typography--text-uppercase mdl-typography--text-center">student projects</div>
+    <div class="section--center mdl-grid mdl-grid--no-spacing">
+        <!--menu - search selections-->
+        <div class="mdl-cell mdl-cell--2-col mdl-layout--large-screen-only" ng-controller="advancedSearchCtrl">
+            <ul class="searchby mdl-typography--text-uppercase" >
+                <!--<ul class="searchby mdl-typography&#45;&#45;text-uppercase" ng-controller="menuDataCtrl">-->
+                <!--<li>-->
+                    <!--&lt;!&ndash; Expandable Textfield &ndash;&gt;-->
+                    <!--<form action="#">-->
+                        <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield&#45;&#45;expandable">-->
+                            <!--<label class="mdl-button mdl-js-button mdl-button&#45;&#45;icon" for="searchResult-search">-->
+                                <!--<i class="material-icons">search</i>-->
+                            <!--</label>-->
+                            <!--<div class="mdl-textfield__expandable-holder">-->
+                                <!--<input class="mdl-textfield__input" type="text" id="searchResult-search">-->
+                                <!--<label class="mdl-textfield__label" for="searchResult-search">Expandable Input</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</li>-->
+                <!--<li ng-repeat="x in MenuData">{{x.menuTitle}}-->
+                    <!--<ul>-->
+                        <!--<li>{{x.submenu}}</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <li>
+                    All
+                </li>
+                <li>
+                    Special Collection
+                    <ul>
+                        <li>Honors Show 2016</li>
+                        <li>Women of SOFA</li>
+                    </ul>
+                </li>
+                <li>
+                    Genre
+                    <ul>
+                        <li>Animation</li>
+                        <li>Live Action</li>
+                        <li>Research</li>
+                        <li>Other </li>
+                    </ul>
+                </li>
+                <li>
+                    Year
+                    <ul>
+                        <li>2017</li>
+                        <li>2016</li>
+                        <li>2015</li>
+                        <li>Earlier </li>
+                    </ul>
+                </li>
+                <div class="demo-separator mdl-cell--1-col"></div>
+                <li ng-click="showAdvancedSearch = !showAdvancedSearch">Advanced Search <i class="material-icons" style="vertical-align: middle">keyboard_arrow_down</i></li>
+            </ul>
+            <ul ng-show="showAdvancedSearch">
+                <li>Full Genre
+                    <ul>
+                        <li>Fiction</li>
+                        <li>Non Fiction</li>
+                        <li>Experimental</li>
+                        <li>Documentary</li>
+                        <li>3D Animation</li>
+                        <li>2D Animation</li>
+                        <li>Stop Motion </li>
+                    </ul>
+                </li>
+                <li>Medium
+                    <ul>
+                        <li>Digital</li>
+                        <li>Script</li>
+                        <li>Craft Track</li>
+                    </ul>
+                </li>
+                <li>Project type
+                    <ul>
+                        <li>BFA Thesis</li>
+                        <li>MFA Thesis</li>
+                        <li>Class Reel</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--menu - search selections for small screen-->
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-layout--small-screen-only" ng-controller="advancedSearchCtrl">
+            <ul class="searchby mdl-typography--text-uppercase" >
+                <li>
+                    All
+                </li>
+                <li>
+                    Special Collection
+                    <ul>
+                        <li>Honors Show 2016</li>
+                        <li>Women of SOFA</li>
+                    </ul>
+                </li>
+                <li>
+                    Genre
+                    <ul>
+                        <li>Animation</li>
+                        <li>Live Action</li>
+                        <li>Research</li>
+                        <li>Other </li>
+                    </ul>
+                </li>
+                <li>
+                    Year
+                    <ul>
+                        <li>2017</li>
+                        <li>2016</li>
+                        <li>2015</li>
+                        <li>Earlier </li>
+                    </ul>
+                </li>
+                <div class="demo-separator mdl-cell--1-col"></div>
+                <li ng-click="showAdvancedSearch = !showAdvancedSearch">Advanced Search <i class="material-icons" style="vertical-align: middle">keyboard_arrow_down</i></li>
+            </ul>
+            <ul ng-show="showAdvancedSearch">
+                <li>Full Genre
+                    <ul>
+                        <li>Fiction</li>
+                        <li>Non Fiction</li>
+                        <li>Experimental</li>
+                        <li>Documentary</li>
+                        <li>3D Animation</li>
+                        <li>2D Animation</li>
+                        <li>Stop Motion </li>
+                    </ul>
+                </li>
+                <li>Medium
+                    <ul>
+                        <li>Digital</li>
+                        <li>Script</li>
+                        <li>Craft Track</li>
+                    </ul>
+                </li>
+                <li>Project type
+                    <ul>
+                        <li>BFA Thesis</li>
+                        <li>MFA Thesis</li>
+                        <li>Class Reel</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" >
+            <div ng-controller="MyController" class="my-controller">
+                <div class="mdl-grid mdl-grid--no-speacing">
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--7-offset-desktop mdl-textfield mdl-js-textfield">
+                        <input ng-model="q" id="filter" class="mdl-textfield__input" placeholder="Filter text">
+                        <label class="mdl-textfield__label" for="filter">Filter:</label>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--middle mdl-color-text--grey-700">
+                        <label for="filter">per page:</label>
+                        <input type="number" min="1" max="100" ng-model="pageSize">
+                    </div>
+                    <div class="mdl-cell mdl-cell--1-col  mdl-color-text--grey-700 mdl-cell--middle">
+                        <span>Page: {{ currentPage }}</span>
+                    </div>
+                    <!--<ul class="pagination">-->
+                        <!--<li class="disabled"><a href="#!"><i class="material-icons">navigate_before</i></a></li>-->
+                        <!--<li class="active"><a href="#!">1</a></li>-->
+                        <!--<li class="page"><a href="#!">2</a></li>-->
+                        <!--<li class="page"><a href="#!">3</a></li>-->
+                        <!--<li class="page"><a href="#!">4</a></li>-->
+                        <!--<li class="page"><a href="#!"><i class="material-icons">navigate_next</i></a></li>-->
+                    <!--</ul>-->
+                    <!--<div class="perpage mdl-cell mdl-cell&#45;&#45;2-col mdl-cell&#45;&#45;2-col-desktop mdl-cell&#45;&#45;4-col-tablet mdl-cell&#45;&#45;2-col-phone mdl-cell&#45;&#45;buttom">-->
+                        <!--<label class="mdl-color-text&#45;&#45;grey-700">video per page</label>-->
+                        <!--<select>-->
+                            <!--<option value="12">12</option>-->
+                            <!--<option value="36">36</option>-->
+                            <!--<option value="72">72</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                </div>
+                <ul class="mdl-grid mdl-grid--no-spacing">
+                    <li class="mdl-cell mdl-cell--4-col" dir-paginate="x in VideoData | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                        <div class="demo-cards">
+                            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                                <div class="mdl-grid mdl-grid--no-spacing">
+                                    <div class="mdl-card__media mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                        <iframe width="560" height="300" ng-src="{{getIframeSrc(x.videoLink)}}" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="mdl-card__title mdl-color-text--grey-600" ui-sref="singleVideo">
+                                        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-desktop mdl-cell--1-col-tablet mdl-cell--1-col-phone mdl-cell--top demo-avatar-block">
+                                            <img ng-src="{{x.authorAvatar}}.jpg" class="demo-avatar">
+                                        </div>
+                                        <div class="mdl-cell mdl-images/user.jpgcell--10-col mdl-cell--10-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone mdl-cell--top">
+                                            <h5>{{x.title}}</h5>
+                                            <h5>{{x.author}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div ng-controller="OtherController" class="other-controller">
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="templates/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
